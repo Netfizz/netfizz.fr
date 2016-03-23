@@ -1,0 +1,34 @@
+<?php require_once 'partials/inc.header.php'; ?>
+
+<span class="name">Mathieu BARBER, <?php echo $age; ?> ans</span>
+<h1 data-animated>Développeur Web <abbr data-tooltip="Profile polyvalent et autonome capable d'intervenir sur toutes les facettes d'un site internet (back-end, front-end, bdd, business logic...)">full-stack</abbr><small>, <span class="nowrap" data-animated><?php echo $developperSinceYear; ?> ans d’expériences</span></small></h1>
+
+<p class="highlight">Conception et réalisation d'applications <abbr data-toolsstip="Sites internet, intranet, extranet">web</abbr> sur mesure</p>
+
+<ul>
+    <li>Spécialiste du framework <abbr data-tooltip="Framework PHP open-source basé sur de nombreux bundles Symfony"><strong>Laravel</strong></abbr>, <abbr data-tooltip="Framework JS comparable à Angular et React">Vue.js</abbr>, et divers <abbr data-tooltip="PHP, MySQL, MongoDB, javascript, HTML5, CSS3, Sass, SVG, Markdown...">langages</abbr> + intégration <abbr data-tooltip="Développement Front-end HTML5 / Sass / jQuery en responsive design et animé">responsive</abbr></li>
+    <li>Habile en <strong class="abbr">référencement</strong> (naturel), graphisme <abbr data-tooltip="Expériences utilisateurs">(UI/UX)</abbr> et administration <abbr data-tooltip="Debian, Nginx/Apache">serveur</abbr></li>
+    <li><strong>Curieux</strong> d'autres <abbr data-tooltip="Développement application mobile (Ionic/Cordova), Node.js, Elasticsearch, Websocket, AWS, Big data, Cloud Computing, Machine learning...">technologies</abbr> et diverses <abbr data-tooltip="Bonnes pratiques de développement (SOLID principe, DRY) et méthode agile SCRUM...">méthodologies</abbr></li>
+    <li><strong>Fondateur du site <a href="//www.fou-de-voyage.com" class="abbr" data-tooltip="En cours de refonte...">Fou de voyage</a></strong>, fort d’une communauté de 20 000 voyageurs passionnés</li>
+</ul>
+
+<div class="center">
+    <form id="bonjour" action="/bonjour" method="POST" data-ajax>
+        <fieldset>
+            <legend>Contact</legend>
+            <label>Name: <input type="text" name="name" value=""></label>
+            <label>E-mail: <input type="text" name="email" value=""></label>
+            <label>Message: <textarea name="message"></textarea></label>
+        </fieldset>
+        <input type="submit" value="Me contacter !" class="big">
+    </form>
+</div>
+
+<div id="logos">
+    <div class="ilovetax" alt="I love tax"></div>
+    <div class="les-horaires" alt="Les-Horaires.fr"></div>
+    <div class="ldlc" alt="LDLC" ></div>
+    <div class="argeles" alt="Argeles"></div>
+</div>
+
+<?php require_once 'partials/inc.footer.php'; ?>

@@ -1,0 +1,10 @@
+/vendor/
+/logs/*
+!/logs/README.md
+.env*
+!.env.example
+/node_modules
+/public/build
+/public/css
+/public/js
+dploy.yaml

@@ -1,0 +1,21 @@
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites(map-get($spritesheet, 'sprites'));
+*/
+@mixin spritesLogo($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: map-get($sprite, 'name');
+    .#{$sprite-name} {
+      width: map-get($sprite, 'width')/2;
+      height: map-get($sprite, 'height')/2;
+      background-position: map-get($sprite, 'offset-x') map-get($sprite, 'offset-y')/2;
+      background-image: url(map-get($sprite, 'image'));
+      background-size: map-get($spritesheet, 'width')/2 map-get($spritesheet, 'height')/2;
+    }
+  }
+}
+
+
+@include spritesLogo(map-get($spritesheet, 'sprites'));

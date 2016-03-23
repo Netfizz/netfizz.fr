@@ -1,0 +1,126 @@
+//@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin,latin-ext);
+
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  font-size: $base-font-size;
+  line-height: $heading-line-height;
+  margin: 0 0 $small-spacing;
+}
+
+h1{
+  font-weight: normal;
+  font-size: $h1-font-size;
+}
+
+h2{
+  font-weight: normal;
+  font-size: $h2-font-size;
+  margin: 0;
+}
+
+h1, p.highlight, button {
+  font-family: $base-font-family;
+}
+
+.fonts-loaded{
+  h1, h2, h3, h4, h5, h6, p.highlight, button, .btn-big {
+    font-family: $heading-font-family;
+  }
+}
+
+p {
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  color: $dark-gray;
+  //text-decoration: none;
+  transition: color $base-duration $base-timing;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: shade($action-color, 25%);
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+
+.name {
+  color: $medium-gray;;
+  display: inline-block;
+  font-size: .75em;
+}
+
+.nowrap{
+  white-space: nowrap;
+}
+
+ul {
+  list-style-type: disc;
+  margin-bottom: $small-spacing;
+  padding-left: $base-spacing;
+  position: relative;
+}
+
+li {
+  margin-bottom: 4px;
+  position: relative;
+}
+
+input[type="submit"],
+.btn{
+  @extend button;
+  background: $black-netfizz;
+
+}
+
+.highlight{
+  font-size: $h3-font-size;
+  font-family: $heading-font-family;
+  line-height: $heading-line-height;
+  //text-rendering: optimizeLegibility; // Fix the character spacing for headings
+}
+
+
+.center{
+  text-align: center;
+}
+
+input[type="submit"].big {
+  @extend button;
+  font-size: $h4-font-size;
+  margin-top: $base-spacing;
+  background: $black-netfizz;
+
+  &:hover {
+    background: $green-netfizz;
+  }
+}

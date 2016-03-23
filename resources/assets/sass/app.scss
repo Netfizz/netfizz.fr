@@ -1,0 +1,150 @@
+@import "node_modules/normalize.css/normalize";
+@import "node_modules/bourbon/app/assets/stylesheets/bourbon";
+@import "node_modules/bourbon-neat/app/assets/stylesheets/neat-helpers";
+@import "base/grid-settings";
+@import "node_modules/bourbon-neat/app/assets/stylesheets/neat";
+@import "base/base";
+@import "node_modules/animatewithsass/animate.scss";
+
+@import "components/browserupgrade";
+@import "components/tooltip";
+@import "components/icons";
+@import "components/progressbar";
+@import "components/preloader";
+@import "components/sprite";
+@import "components/perspective";
+@import "animation";
+
+%transition {
+  transition: all $base-duration $base-timing ($base-duration - .1s);
+}
+
+html,
+body {
+  background: #fff;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#cover{
+  position: fixed;
+  min-height: 100vh;
+  height: 100vh;
+  display: none;
+}
+
+#content {
+  padding-top: 280px;
+  position: relative;
+  text-align: left;
+  background: #fff;
+
+  & > * {
+    display: none;
+  }
+}
+
+#logo{
+  @extend %transition;
+  text-align: center;
+  background: #F1F1F1;
+  position: absolute;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1em;
+
+  img {
+    @extend %transition;
+    width: 100%;
+  }
+}
+
+.wrap {
+  @include outer-container($local-max-width: 50em);
+  padding: 2em;
+  box-sizing: content-box;
+}
+
+#logos {
+  margin: 3em 0 0 0;
+  text-align: center;
+
+  & > * {
+    display: inline-block;
+    margin: 0 20px 20px 0;
+    filter: grayscale(100%);
+    opacity: 0.2;
+    vertical-align: middle;
+    transition: all 0.4s $base-timing;
+
+    &:hover {
+      opacity: 1;
+      transition: 0.3s ease;
+      filter: grayscale(0%);
+    }
+  }
+}
+
+footer {
+  display: none;
+  position: relative;
+  font-size: $base-font-size * .75;
+  text-align: center;
+  padding: 3em 1em 1em 1em;
+  color: $gray;
+  background: #f1F1F1;
+
+  ul {
+    li {
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+
+  a {
+    color: $gray;
+    border: 0!important;
+
+    & > [class^="icon-"]::before,
+    & > [class*=" icon-"]::before {
+      display:inline-block;
+      text-decoration:none;
+      font-size: em(24px);
+      vertical-align: middle;
+    }
+  }
+}
+
+form > fieldset {
+  position: absolute;
+  left: -100vw;
+}
+
+a[data-tooltip] {
+  border: none;
+}
+
+.btn-big {
+  border: 0;
+  border-radius: $base-border-radius;
+  color: #fff;
+  display: inline-block;
+  font-family: $base-font-family;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: $small-spacing $base-spacing;
+  text-decoration: none;
+  transition: background-color 150ms $base-timing;
+  vertical-align: middle;
+  font-size: $h4-font-size;
+  margin-top: $base-spacing;
+  background: $green-netfizz;
+}
+
+@import "responsive";

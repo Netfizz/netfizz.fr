@@ -1,0 +1,70 @@
+@include media($large-screen-up) {
+
+  body::after {
+    @extend %transition;
+    content: ' ';
+    height: 100vh;
+    width: 100vw;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 0;
+  }
+
+  footer,
+  #content {
+    background: none;
+    min-width: 66vw;
+    width: 66vw;
+    margin-left: 34vw;
+    z-index: 10;
+
+    .wrap {
+      padding: 1em 4em 1em 6em;
+    }
+  }
+
+  #content {
+    padding-top: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #logo {
+    background: transparent;
+    min-height: unset;
+    height: auto;
+    width: auto;
+    display: none;
+    position: relative;
+
+    img {
+      max-width: 400px;
+    }
+  }
+
+  .wrap {
+    max-width: em(690px);
+  }
+
+  .page-loaded {
+    body::after {
+      transform: skewX(-7deg);
+      right: -36vw;
+    }
+
+    #cover {
+      display: block;
+    }
+
+    #logo {
+      height: auto;
+      display: block;
+      @include fadeInRight(1, $base-duration);
+      animation-delay: $base-duration + $base-delay + .3s;
+    }
+  }
+}

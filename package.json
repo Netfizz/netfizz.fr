@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "devDependencies": {
+    "gulp": "*",
+    "laravel-elixir-imagemin": "^0.2.3",
+    "laravel-elixir-uncss": "^2.1.0"
+  },
+  "dependencies": {
+    "animatewithsass": "geoffgraham/animate.scss",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "bourbon": "*",
+    "bourbon-neat": "*",
+    "fontfaceobserver": "^1.6.3",
+    "laravel-elixir": "*",
+    "laravel-elixir-spritesmith": "^0.3.2",
+    "normalize.css": "*"
+  }
+}

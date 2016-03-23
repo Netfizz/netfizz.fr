@@ -1,0 +1,112 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: map-get($icon-home, 'width');
+}
+
+At the bottom of this section, we provide information about the spritesheet itself
+*/
+$argeles: (
+  name: 'argeles',
+  x: 0px,
+  y: 205px,
+  offset-x: 0px,
+  offset-y: -205px,
+  width: 200px,
+  height: 90px,
+  total-width: 200px,
+  total-height: 295px,
+  image: '/images/sprite.png'
+);
+$ilovetax: (
+  name: 'ilovetax',
+  x: 0px,
+  y: 64px,
+  offset-x: 0px,
+  offset-y: -64px,
+  width: 200px,
+  height: 65px,
+  total-width: 200px,
+  total-height: 295px,
+  image: '/images/sprite.png'
+);
+$ldlc: (
+  name: 'ldlc',
+  x: 0px,
+  y: 0px,
+  offset-x: 0px,
+  offset-y: 0px,
+  width: 160px,
+  height: 64px,
+  total-width: 200px,
+  total-height: 295px,
+  image: '/images/sprite.png'
+);
+$les-horaires: (
+  name: 'les-horaires',
+  x: 0px,
+  y: 129px,
+  offset-x: 0px,
+  offset-y: -129px,
+  width: 200px,
+  height: 76px,
+  total-width: 200px,
+  total-height: 295px,
+  image: '/images/sprite.png'
+);
+$spritesheet: (
+  width: 200px,
+  height: 295px,
+  image: '/images/sprite.png',
+  sprites: ($argeles, $ilovetax, $ldlc, $les-horaires, )
+);
+
+/*
+The provided mixins are intended to be used with variables directly
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: map-get($sprite, 'width');
+}
+
+@mixin sprite-height($sprite) {
+  height: map-get($sprite, 'height');
+}
+
+@mixin sprite-position($sprite) {
+  background-position: map-get($sprite, 'offset-x') map-get($sprite, 'offset-y');
+}
+
+@mixin sprite-image($sprite) {
+  background-image: url(map-get($sprite, 'image'));
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites(map-get($spritesheet, 'sprites'));
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: map-get($sprite, 'name');
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
