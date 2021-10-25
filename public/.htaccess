@@ -203,8 +203,11 @@ AddDefaultCharset utf-8
 	# RewriteBase /
 
 	# Remove www subdomain
+	RewriteCond %{HTTPS} !=on
+	RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
 	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-	RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+	RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
 	# Redirect all old urls
 	RedirectMatch 301 ^/(.*)\.html http://netfizz.fr/
